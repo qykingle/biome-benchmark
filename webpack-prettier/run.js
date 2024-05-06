@@ -2,7 +2,7 @@
 const { execSync } = require("child_process");
 
 const runWebpackPrettier = () => {
-	const hyperfineCommand = `hyperfine  --show-output -i -w 2 -n Prettier "npx prettier '**/*.js' '**/*.ts'  --write --loglevel=error" -n Biome "npx biome format  'lib' 'examples' 'declarations' 'benchmark'  --write --max-diagnostics=0"`;
+	const hyperfineCommand = `hyperfine  --show-output -i -w 2  -n Biome "npx biome format  'lib'  --write --max-diagnostics=0" -n Prettier "npx prettier 'lib/**/*.js'  --write --loglevel=error"`;
 	console.log(hyperfineCommand);
 
 	execSync(hyperfineCommand, {
