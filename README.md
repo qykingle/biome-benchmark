@@ -1,3 +1,9 @@
+## 测试步骤
+- 在webpack-prettier文件夹下，运行node run.js
+- 在webpack-eslint文件夹下，运行node run.js
+
+## 测试结果
+```txt
 hyperfine  --show-output -i -w 2 -n Prettier "npx prettier 'lib/**/*.js'  --write --loglevel=error" -n Biome "npx biome format  'lib'  --write --max-diagnostics=0"
 Benchmark 1: Prettier
   Time (mean ± σ):      2.928 s ±  0.015 s    [User: 5.857 s, System: 0.213 s]
@@ -23,10 +29,7 @@ Summary
   Biome ran
    10.38 ± 0.28 times faster than Prettier
 
-
-
-
-
+----------------------------------------
 
    hyperfine  --show-output -i -w 2 -n ESLint "npx eslint 'lib/**/*.js'  --no-ignore" -n Biome "npx biome check 'lib' --max-diagnostics=0"
 Benchmark 1: ESLint  
@@ -44,3 +47,5 @@ Time (mean ± σ):     362.7 ms ±   5.6 ms    [User: 1467.2 ms, System: 75.8 ms
 Summary
   Biome ran
    18.76 ± 0.37 times faster than ESLint
+
+```
