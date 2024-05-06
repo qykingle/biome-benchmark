@@ -79,7 +79,7 @@ function benchmarkFormatter(biome) {
 			})
 			.join(" ");
 
-		const prettierCommand = `node '${resolvePrettier()}' ${prettierPaths} --write --loglevel=error`;
+		const prettierCommand = `npx prettier ${prettierPaths} --write --loglevel=error`;
 
 		const biomeCommand = `${biome} format --max-diagnostics=0 ${Object.keys(
 			configuration.sourceDirectories,
@@ -244,7 +244,7 @@ function run() {
 	fs.mkdirSync("target", { recursive: true });
 
 	benchmarkFormatter('npx biome');
-	// benchmarkLinter(biome);
+	benchmarkLinter('npx biome');
 }
 
 run();
