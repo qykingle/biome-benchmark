@@ -1,0 +1,15 @@
+{
+	"name": "@biomejs/benchmark",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"main": "run.js",
+	"author": "Biome Developers and Contributors",
+	"license": "MIT OR Apache-2.0",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "^1.7.3",
+		"eslint": "9.2.0",
+		"prettier": "3.2.5"
+	}
+}
